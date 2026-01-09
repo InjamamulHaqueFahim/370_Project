@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding: UTF-8 supports all international characters -->
+  <meta charset="UTF-8" />
+  
+  <!-- Viewport meta tag: Makes the page responsive on mobile devices -->
+  <!-- width=device-width: Sets width to device's screen width -->
+  <!-- initial-scale=1.0: Sets initial zoom level to 100% -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Page title: Shows in browser tab -->
+  <title>Mood Log | Campus Wellness</title>
+  
+  <!-- Link to external CSS stylesheet for styling -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="theme-student">
+  <!-- Main page container: Wraps all content -->
+  <div class="page-container">
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <!-- Header with logo and navigation links -->
+    <!-- Reused across all student pages for consistency -->
+    <header class="top-bar">
+      <h1 class="logo">Campus Wellness</h1>
+      
+      <!-- Navigation menu -->
+      <nav class="top-nav">
+        <a href="student_dashboard.html" class="nav-link">Dashboard</a>
+        
+        <!-- "active" class highlights the current page -->
+        <a href="mood_log.html" class="nav-link active">Mood Log</a>
+        
+        <a href="habit_tracker.html" class="nav-link">Habits</a>
+        <a href="appointments.html" class="nav-link">Appointments</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="index.html" class="nav-link">Logout</a>
+      </nav>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <!-- form-card class provides styling for the form container -->
+    <main class="form-card">
+      <h2>Daily Mood Log</h2>
+      
+      <!-- Description text explaining the feature's purpose -->
+      <p class="small-text">
+        Here you can record how you feel each day. Later this data will be used
+        for analytics and academic stress helper.
+      </p>
+
+      <!-- ==================== MOOD LOG FORM ==================== -->
+      <!-- Form ID is used by JavaScript to attach event listeners -->
+      <!-- When submitted, JavaScript prevents default and sends data to API -->
+      <form id="mood-form">
+
+        <!-- MOOD RATING FIELD -->
+        <!-- Dropdown with 1-5 scale, includes emojis for visual feedback -->
+        <!-- "required" attribute makes this field mandatory -->
+        <div class="form-group">
+          <label for="mood-rating">Mood Rating (1–5)</label>
+          <select id="mood-rating" required>
+            <option value="">Select rating</option>
+            <option value="1">😞 Very Bad (1)</option>
+            <option value="2">☹️ Bad (2)</option>
+            <option value="3">😐 Neutral (3)</option>
+            <option value="4">🙂 Good (4)</option>
+            <option value="5">😄 Excellent (5)</option>
+          </select>
+        </div>
+
+        <!-- STRESS LEVEL FIELD -->
+        <!-- Text values (Low/Medium/High) are mapped to numbers (1/2/3) in JavaScript -->
+        <!-- This provides better UX while maintaining numeric data in database -->
+        <div class="form-group">
+          <label for="stress-level">Stress Level</label>
+          <select id="stress-level" required>
+            <option value="">Select</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+        
+        <!-- ENERGY LEVEL FIELD -->
+        <!-- 1-5 scale to measure how energetic the student feels -->
+        <div class="form-group">
+          <label for="energy-level">Energy Level (1–5)</label>
+          <select id="energy-level" required>
+            <option value="">Select</option>
+            <option value="1">Very Low (1)</option>
+            <option value="2">Low (2)</option>
+            <option value="3">Moderate (3)</option>
+            <option value="4">High (4)</option>
+            <option value="5">Very High (5)</option>
+          </select>
+        </div>
+
+        <!-- SLEEP QUALITY FIELD -->
+        <!-- Text values (Good/Average/Poor) mapped to numbers in JavaScript -->
+        <!-- Not required - student can skip if they prefer -->
+        <div class="form-group">
+          <label for="sleep-quality">Sleep Quality</label>
+          <select id="sleep-quality">
+            <option value="">Select</option>
+            <option value="Good">Good</option>
+            <option value="Average">Average</option>
+            <option value="Poor">Poor</option>
+          </select>
+        </div>
+
+        <!-- EMOTION TAG FIELD -->
+        <!-- Predefined emotion categories for easier analysis -->
+        <!-- Stored as text in database -->
+        <div class="form-group">
+          <label for="emotion">Emotion Tag</label>
+          <select id="emotion">
+            <option value="">Select</option>
+            <option value="Anxious">Anxious</option>
+            <option value="Motivated">Motivated</option>
+            <option value="Lonely">Lonely</option>
+            <option value="Overwhelmed">Overwhelmed</option>
+            <option value="Calm">Calm</option>
+          </select>
+        </div>
+
+        <!-- NOTES FIELD -->
+        <!-- Free-text area for additional context -->
+        <!-- Optional field - students can provide details if they want -->
+        <div class="form-group">
+          <label for="note">Notes (optional)</label>
+          <textarea
+            id="note"
+            rows="3"
+            placeholder="What happened today?"
+          ></textarea>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <!-- type="submit" triggers form submission event -->
+        <!-- JavaScript intercepts this and sends data to API -->
+        <button type="submit" class="btn btn-primary">
+          Save Mood Log
+        </button>
+
+      </form>
+
+      <!-- Horizontal divider line for visual separation -->
+      <hr style="margin: 20px 0; border: none; border-top: 1px solid #e2e8f0;" />
+
+      <!-- ==================== RECENT LOGS SECTION ==================== -->
+      <!-- Displays previously saved mood logs -->
+      <h3>Recent Mood Logs</h3>
+      
+      <!-- Empty <ul> that JavaScript will populate with mood log items -->
+      <!-- JavaScript fetches data from GET /mood-log/:std_id and creates <li> elements -->
+      <ul id="mood-log-list" class="small-text"></ul>
+
+    </main>
+  </div>
+
+  <!-- Link to JavaScript file that handles all interactivity -->
+  <!-- Loaded at the end so DOM elements are available when script runs -->
+  <script src="js/main.js"></script>
+</body>
+</html>

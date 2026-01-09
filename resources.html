@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Character encoding -->\n
+  <meta charset="UTF-8" />
+
+  <!-- Responsive viewport -->\n
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title -->\n <title>Wellness Resources | Campus Wellness</title>
+
+  <!-- CSS stylesheet -->\n
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="theme-resources">
+  <div class="page-container">
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <header class="top-bar">
+      <h1 class="logo">Campus Wellness</h1>
+      <nav class="top-nav">
+        <a href="student_dashboard.html" class="nav-link">Dashboard</a>
+        <a href="mood_log.html" class="nav-link">Mood Log</a>
+        <a href="habit_tracker.html" class="nav-link">Habits</a>
+        <a href="appointments.html" class="nav-link">Appointments</a>
+
+        <!-- Active page indicator -->
+        <a href="resources.html" class="nav-link active">Resources</a>
+
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="index.html" class="nav-link">Logout</a>
+      </nav>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <h2>Wellness Resources</h2>
+
+    <!-- Description of the resources section -->
+    <p class="small-text">
+      These are simple self-help materials for mental, physical and academic wellbeing.
+    </p>
+
+    <!-- ==================== SEARCH BAR ==================== -->
+    <!-- Real-time search to filter resources -->
+    <!-- JavaScript listens to input events and filters cards -->
+    <div class="form-group" style="max-width: 320px;">
+      <input type="text" id="resource-search" placeholder="Search resources..." />
+    </div>
+
+    <!-- ==================== RESOURCE CARDS GRID ==================== -->
+    <!-- Currently static HTML content -->
+    <!-- Future enhancement: Generate from database -->
+    <!-- JavaScript filters these cards based on search input -->
+    <div class="resource-grid">
+
+      <!-- RESOURCE CARD 1: Academic Stress -->
+      <!-- Each card has class "resource-card" for JavaScript filtering -->
+      <div class="resource-card">
+        <h3>Managing Exam Stress</h3>
+        <p>Practical tips to handle exam pressure and stay focused.</p>
+        <p class="small-text">Category: Academic Stress</p>
+      </div>
+
+      <!-- RESOURCE CARD 2: Sleep -->
+      <div class="resource-card">
+        <h3>Healthy Sleep Habits</h3>
+        <p>Small changes in routine that can improve your sleep quality.</p>
+        <p class="small-text">Category: Sleep</p>
+      </div>
+
+      <!-- RESOURCE CARD 3: Nutrition -->
+      <div class="resource-card">
+        <h3>Nutrition Tips for Students</h3>
+        <p>Easy and budget-friendly ideas to eat better on campus.</p>
+        <p class="small-text">Category: Nutrition</p>
+      </div>
+
+      <!-- RESOURCE CARD 4: Mental Health -->
+      <div class="resource-card">
+        <h3>Dealing with Anxiety</h3>
+        <p>Grounding exercises and breathing techniques for anxiety.</p>
+        <p class="small-text">Category: Mental Health</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript file for search functionality -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Dashboard | Campus Wellness</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="theme-professional">
+  <div class="page-container">
+
+    <!-- Navbar for wellness professionals -->
+    <header class="top-bar">
+      <h1 class="logo">Campus Wellness</h1>
+      <nav class="top-nav">
+        <a href="professional_dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="appointments.html" class="nav-link">Appointments</a>
+        <a href="index.html" class="nav-link">Logout</a>
+      </nav>
+    </header>
+
+    <main class="dashboard-grid">
+
+      <!-- Welcome card (static) -->
+      <section class="card">
+        <h2>Welcome, Wellness Professional</h2>
+        <p class="small-text">
+          Here you can see your schedule and recent student activity (later we can
+          show mood summaries of assigned students).
+        </p>
+      </section>
+
+      <!-- Today's Appointments (clickable) -->
+      <a href="appointments.html" class="card-link">
+        <section class="card">
+          <h3>Today's Appointments</h3>
+          <ul id="pro-today-appointments" class="small-text">
+            <li>No appointments scheduled for today.</li>
+          </ul>
+        </section>
+      </a>
+
+      <!-- Pending Requests (clickable) -->
+      <a href="appointments.html" class="card-link">
+        <section class="card">
+          <h3>Pending Requests</h3>
+          <p class="small-text">
+            In future this section can be used to approve or reject appointment requests.
+          </p>
+        </section>
+      </a>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

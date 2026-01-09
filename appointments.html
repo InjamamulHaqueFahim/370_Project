@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Character encoding -->\n
+  <meta charset="UTF-8" />
+
+  <!-- Responsive viewport -->\n
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title -->\n <title>Appointments | Campus Wellness</title>
+
+  <!-- CSS stylesheet -->\n
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="theme-student">
+  <div class="page-container">
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <header class="top-bar">
+      <h1 class="logo">Campus Wellness</h1>
+      <nav class="top-nav">
+        <a href="student_dashboard.html" class="nav-link">Dashboard</a>
+        <a href="mood_log.html" class="nav-link">Mood Log</a>
+        <a href="habit_tracker.html" class="nav-link">Habits</a>
+
+        <!-- Active page indicator -->
+        <a href="appointments.html" class="nav-link active">Appointments</a>
+
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="index.html" class="nav-link">Logout</a>
+      </nav>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+
+      <!-- Header with title and booking button -->
+      <!-- flex-between class creates space between title and button -->
+      <div class="flex-between">
+        <h2>Your Appointments</h2>
+
+        <!-- Toggle button to show/hide booking form -->
+        <!-- JavaScript handles click event to toggle visibility -->
+        <button class="btn btn-primary" id="new-appointment-toggle">
+          Book New Appointment
+        </button>
+      </div>
+
+      <!-- ==================== BOOKING FORM SECTION ==================== -->
+      <!-- Initially hidden (display: none) -->
+      <!-- JavaScript toggles visibility when button is clicked -->
+      <section id="new-appointment-section" class="form-card" style="margin-top: 16px; display: none;">
+        <h3>Book New Appointment</h3>
+
+        <!-- Appointment booking form -->
+        <!-- Form ID used by JavaScript to attach submit handler -->
+        <form id="appointment-form">
+
+          <!-- Professional Type Dropdown -->
+          <!-- Required field - student must select a type -->
+          <div class="form-group">
+            <label for="ap-type">Professional Type</label>
+            <select id="ap-type" required>
+              <option value="">Select</option>
+              <option value="Counselor">Counselor</option>
+              <option value="Doctor">Doctor</option>
+              <option value="Nutritionist">Nutritionist</option>
+            </select>
+          </div>
+
+          <!-- Professional Name Input -->
+          <!-- Text input for entering professional's name -->
+          <div class="form-group">
+            <label for="ap-name">Professional Name</label>
+            <input id="ap-name" type="text" placeholder="e.g. Dr. Rahman" required />
+          </div>
+
+          <!-- Date Picker -->
+          <!-- HTML5 date input provides calendar widget -->
+          <div class="form-group">
+            <label for="ap-date">Date</label>
+            <input id="ap-date" type="date" required />
+          </div>
+
+          <!-- Time Picker -->
+          <!-- HTML5 time input provides time selection widget -->
+          <div class="form-group">
+            <label for="ap-time">Time</label>
+            <input id="ap-time" type="time" required />
+          </div>
+
+          <!-- Reason Textarea (Optional) -->
+          <!-- Student can provide context for the appointment -->
+          <div class="form-group">
+            <label for="ap-reason">Reason (optional)</label>
+            <textarea id="ap-reason" rows="2" placeholder="Short reason for the session"></textarea>
+          </div>
+
+          <!-- Submit button -->
+          <!-- JavaScript intercepts and sends POST to /appointments -->
+          <button type="submit" class="btn btn-primary">
+            Confirm Booking
+          </button>
+        </form>
+      </section>
+
+      <!-- ==================== APPOINTMENTS LIST ==================== -->
+      <!-- Displays all appointments for the student -->
+      <section class="card" style="margin-top: 20px;">
+        <h3>Upcoming Appointments</h3>
+
+        <!-- Empty <ul> populated by JavaScript -->
+        <!-- JavaScript fetches from GET /appointments/:std_id -->
+        <!-- Creates <li> elements showing date, time, professional, status -->
+        <ul id="appointment-list" class="small-text">
+          <!-- JS will render appointments here -->
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- JavaScript file for interactivity -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

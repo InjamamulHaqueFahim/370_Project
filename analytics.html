@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics | Campus Wellness</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="theme-analytics">
+  <div class="page-container">
+    <!-- student navbar -->
+    <header class="top-bar">
+      <h1 class="logo">Campus Wellness</h1>
+      <nav class="top-nav">
+        <a href="student_dashboard.html" class="nav-link">Dashboard</a>
+        <a href="mood_log.html" class="nav-link">Mood Log</a>
+        <a href="habit_tracker.html" class="nav-link">Habits</a>
+        <a href="appointments.html" class="nav-link">Appointments</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="analytics.html" class="nav-link active">Analytics</a>
+        <a href="index.html" class="nav-link">Logout</a>
+      </nav>
+    </header>
+
+    <h2>Wellness Analytics</h2>
+    <p class="small-text">
+      These charts will show patterns from mood logs, habits and stress levels.
+      For now we will use sample data, later this will come from the database.
+    </p>
+
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3>Mood Trend</h3>
+        <canvas id="moodChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Habit Completion</h3>
+        <canvas id="habitChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Stress Level Breakdown</h3>
+        <canvas id="stressChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart.js for basic charts later -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | Campus Wellness</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="theme-student">
+  <div class="page-container">
+    <!-- top navigation bar for student side -->
+    <header class="top-bar">
+      <h1 class="logo">Campus Wellness</h1>
+
+      <nav class="top-nav">
+        <a href="student_dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="mood_log.html" class="nav-link">Mood Log</a>
+        <a href="habit_tracker.html" class="nav-link">Habits</a>
+        <a href="appointments.html" class="nav-link">Appointments</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="index.html" class="nav-link">Logout</a>
+      </nav>
+    </header>
+
+    <!-- main dashboard cards for student -->
+    <main class="dashboard-grid">
+      <section class="card">
+        <h2>Welcome, Student</h2>
+        <p class="small-text">
+          This dashboard gives a quick overview of your wellness activity.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>Today’s Mood</h3>
+        <p class="small-text" id="dashboard-mood-summary">
+          No mood logged yet for today.
+        </p>
+        <a href="mood_log.html" class="btn btn-primary" style="width:auto;">
+          Mood Log
+        </a>
+      </section>
+
+      <section class="card">
+        <h3>Wellness Suggestions</h3>
+        <p id="recommendation-text" class="small-text">
+          No recommendations right now.
+        </p>
+      </section>
+
+
+      <section class="card">
+        <h3>Habit Summary</h3>
+        <p class="small-text" id="dashboard-habit-summary">
+          No habit data for today yet.
+        </p>
+        <a href="habit_tracker.html" class="btn btn-primary" style="width:auto;">
+          View Habits
+        </a>
+      </section>
+
+      <section class="card">
+        <h3>Weekly Habit Summary</h3>
+        <p id="weekly-habit-summary" class="small-text">
+          Loading summary...
+        </p>
+      </section>
+
+
+      <section class="card">
+        <h3>Upcoming Appointments</h3>
+        <ul id="dashboard-appointments" class="small-text">
+          <li>No upcoming appointments found.</li>
+        </ul>
+        <a href="appointments.html" class="btn btn-primary" style="width:auto;">
+          Book Appointment
+        </a>
+      </section>
+      <section class="card">
+        <h3>Notifications</h3>
+        <ul id="notification-list" class="small-text"></ul>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

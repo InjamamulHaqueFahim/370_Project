@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Character encoding for international character support -->
+  <meta charset="UTF-8" />
+
+  <!-- Responsive viewport settings for mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title displayed in browser tab -->
+  <title>Habit Tracker | Campus Wellness</title>
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="theme-student">
+  <div class="page-container">
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <!-- Same navigation bar used across all student pages -->
+    <header class="top-bar">
+      <h1 class="logo">Campus Wellness</h1>
+      <nav class="top-nav">
+        <a href="student_dashboard.html" class="nav-link">Dashboard</a>
+        <a href="mood_log.html" class="nav-link">Mood Log</a>
+
+        <!-- "active" class highlights current page in navigation -->
+        <a href="habit_tracker.html" class="nav-link active">Habits</a>
+
+        <a href="appointments.html" class="nav-link">Appointments</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="index.html" class="nav-link">Logout</a>
+      </nav>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="form-card">
+      <h2>Daily Habit Tracker</h2>
+
+      <!-- Explanation of the feature -->
+      <p class="small-text">
+        Tick the habits you have completed today. This will later be connected
+        with your analytics and progress reports.
+      </p>
+
+      <!-- ==================== HABIT TRACKING FORM ==================== -->
+      <!-- Form ID used by JavaScript to attach event listeners -->
+      <!-- Currently uses static habits, can be made dynamic later -->
+      <form id="habit-form">
+
+        <!-- Empty <ul> that JavaScript populates with habit checkboxes -->
+        <!-- JavaScript creates <li> elements with checkbox inputs -->
+        <!-- Each checkbox has value=habit_id for identification -->
+        <ul id="habit-list" class="small-text"></ul>
+
+        <!-- Submit button to save completed habits -->
+        <!-- JavaScript intercepts submission and sends data to API -->
+        <button type="submit" class="btn btn-primary" style="margin-top: 20px;">
+          Save Today's Habits
+        </button>
+      </form>
+
+    </main>
+  </div>
+
+  <!-- JavaScript file loaded at end for DOM availability -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

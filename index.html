@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Wellness | Login</title>
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="center-page">
+  <!-- main wrapper for login page -->
+  <div class="auth-card">
+    <h1 class="app-title">Campus Wellness Tracking &amp; Support System</h1>
+    <p class="app-subtitle">Log in to continue</p>
+
+    <!-- simple login form, real auth will come from backend later -->
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="role">Login as</label>
+        <select id="role" required>
+          <option value="">Select role</option>
+          <option value="student">Student</option>
+          <option value="professional">Wellness Professional</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        Login
+      </button>
+    </form>
+
+
+  </div>
+
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Campus Wellness</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="theme-admin">
+  <div class="page-container">
+
+    <!-- Admin Navbar -->
+    <header class="top-bar">
+      <h1 class="logo">Campus Wellness</h1>
+      <nav class="top-nav">
+        <a href="admin_dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="index.html" class="nav-link">Logout</a>
+      </nav>
+    </header>
+
+    <h2>Admin Dashboard</h2>
+    <p class="small-text">
+      This view is for monitoring overall system usage. Later this data will come
+      from actual database tables.
+    </p>
+
+    <main class="dashboard-grid">
+
+      <!-- Total Students -->
+      <a href="student_dashboard.html" class="card-link">
+        <section class="card">
+          <h3>Total Students</h3>
+          <p id="student-count">0</p>
+        </section>
+      </a>
+
+      <!-- Total Professionals -->
+      <a href="professional_dashboard.html" class="card-link">
+        <section class="card">
+          <h3>Total Professionals</h3>
+          <p id="professional-count">0</p>
+        </section>
+      </a>
+
+      <!-- Total Appointments -->
+      <a href="appointments.html" class="card-link">
+        <section class="card">
+          <h3>Total Appointments</h3>
+          <p id="appointment-count">0</p>
+        </section>
+      </a>
+
+      <!-- System Status (static) -->
+      <section class="card">
+        <h3>System Status</h3>
+        <p class="small-text">
+          Everything looks normal. Later this section can show more advanced stats.
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
