@@ -1,0 +1,481 @@
+/* -----------------------------------
+   ROOT COLORS (pastel but readable)
+------------------------------------ */
+
+:root {
+  /* main pastel palette */
+  --blue-main: #7fa9ff;
+  --blue-dark: #4d72c8;
+  --blue-light: #dbe7ff;
+
+  --pink-main: #f6aee8;
+  --pink-dark: #d670c0;
+  --pink-light: #ffe5f6;
+
+  --lavender-main: #9d85b6;
+  --lavender-light: #ece3ff;
+
+  --mint-main: #b8f2e1;
+  --mint-light: #e9fff7;
+
+  --grey-bg: #f5f7fb;
+  --text-dark: #344055;
+  --text-light: #7b8794;
+
+  --success: #7fe7c4;
+  --warning: #ffd779;
+  --danger: #ff9b9b;
+  --border: #e2e8f0;
+
+  --radius: 18px;
+  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.15);
+}
+
+/* -----------------------------------
+   GLOBAL RESET / BASE
+------------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text-dark);
+}
+
+/* main max-width wrapper */
+.page-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.small-text {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* -----------------------------------
+   AUTH / LOGIN PAGE
+------------------------------------ */
+
+.center-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #e6f2ff, #fdfbff);
+}
+
+.auth-card {
+  background: #ffffff;
+  padding: 32px 24px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  width: 100%;
+  max-width: 420px;
+}
+
+.app-title {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--blue-dark);
+  margin-bottom: 4px;
+}
+
+.app-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+/* -----------------------------------
+   FORM ELEMENTS
+------------------------------------ */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.2s;
+  background: #ffffff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--blue-main);
+  box-shadow: 0 0 0 3px rgba(127, 169, 255, 0.3);
+}
+
+/* -----------------------------------
+   BUTTONS
+------------------------------------ */
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s;
+  background: #e2e8f0;
+  color: var(--text-dark);
+}
+
+/* main action button (blue by default) */
+.btn-primary {
+  background: var(--blue-main);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(79, 114, 200, 0.4);
+}
+
+/* hover pop effect for all buttons */
+.btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.18);
+}
+
+/* slightly darker shade on hover for primary */
+.btn-primary:hover {
+  background: var(--blue-dark);
+}
+
+/* -----------------------------------
+   TOP NAV BAR
+------------------------------------ */
+
+.top-bar {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  padding: 16px 24px;
+  margin-bottom: 24px;
+
+  /* made it column so it looks neat on all widths */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* nav links wrap nicely on small screens */
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+}
+
+.top-nav .nav-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+
+/* hover state for nav links */
+.top-nav .nav-link:hover {
+  background: var(--blue-light);
+}
+
+/* active tab looks like a pill */
+.top-nav .nav-link.active {
+  background: var(--blue-main);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(127, 169, 255, 0.6);
+}
+
+/* -----------------------------------
+   DASHBOARD GRID + CARDS
+------------------------------------ */
+
+/* DASHBOARD GRID + CARDS */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+  margin-top: 8px;
+}
+
+/* base style for any card-like element */
+.card,
+.form-card,
+.resource-card,
+.chart-card {
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: var(--shadow-soft);
+  padding: 18px 20px;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+/* slightly more padding for form-card (since it has inputs) */
+.form-card {
+  padding: 22px 24px;
+}
+
+/* hover pop effect for cards (like buttons but softer) */
+.card:hover,
+.form-card:hover,
+.resource-card:hover,
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.22);
+}
+
+/* RESOURCES PAGE – keep it lively with pink accent */
+.resource-card {
+  border-top: 6px solid var(--pink-main);
+}
+
+/* ANALYTICS PAGE */
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* give charts a blue accent by default */
+.chart-card {
+  border-top: 5px solid var(--blue-main);
+}
+
+/* textareas same style as inputs */
+textarea {
+  resize: vertical;
+}
+
+/* -----------------------------------
+   HABIT TRACKER
+------------------------------------ */
+
+.habit-item {
+  /* keeps checkbox + label on one line */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* let label take the remaining width so it doesn't wrap weirdly */
+.habit-item label {
+  flex: 1;
+}
+
+/* summary line under habits */
+#habit-summary {
+  margin-top: 14px;
+}
+
+/* -----------------------------------
+   APPOINTMENTS
+------------------------------------ */
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#appointment-list li,
+.mood-log-item,
+.appointment-item {
+  margin-bottom: 4px;
+}
+
+/* -----------------------------------
+   RESOURCES PAGE
+------------------------------------ */
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+
+
+/* -----------------------------------
+   MOOD TAG COLORS (if needed later)
+------------------------------------ */
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #ffffff;
+}
+
+.tag.good {
+  background: var(--success);
+}
+.tag.okay {
+  background: var(--warning);
+}
+.tag.bad {
+  background: var(--danger);
+}
+
+/* -----------------------------------
+   RESPONSIVE TWEAKS
+------------------------------------ */
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 14px;
+  }
+
+  .top-bar {
+    padding: 12px 16px;
+  }
+
+  .card,
+  .form-card {
+    padding: 16px 16px;
+  }
+}
+
+/* -----------------------------------
+   THEME BACKGROUNDS (per-page vibes)
+------------------------------------ */
+
+/* student pages: soft blue + mint */
+body.theme-student {
+  background: radial-gradient(circle at top, #e4f2ff, #f5fffb);
+}
+
+body.theme-student .logo {
+  color: var(--blue-dark);
+}
+
+/* primary buttons for student pages = blue */
+body.theme-student .btn-primary {
+  background: var(--blue-main);
+}
+
+/* resources page: pink + peach, more cheerful */
+body.theme-resources {
+  background: radial-gradient(circle at top, #ffe5f6, #ffe9da);
+}
+
+body.theme-resources .logo {
+  color: var(--pink-main);
+}
+
+body.theme-resources .nav-link.active {
+  background: var(--pink-main);
+}
+
+body.theme-resources .nav-link:hover {
+  background: var(--pink-light);
+}
+
+/* analytics page: blue + lavender (reflects insight) */
+body.theme-analytics {
+  background: radial-gradient(circle at top, #e3f0ff, #f1e8ff);
+}
+
+body.theme-analytics .logo {
+  color: var(--lavender-main);
+}
+
+body.theme-analytics .nav-link.active {
+  background: var(--lavender-main);
+}
+
+body.theme-analytics .nav-link:hover {
+  background: var(--lavender-light);
+}
+
+/* professional dashboard: therapist palette (lavender + grey) */
+body.theme-professional {
+  background: radial-gradient(circle at top, #e1d1d7, #f4f0f6);
+}
+
+body.theme-professional .logo {
+  color: #4f5980;
+}
+
+body.theme-professional .nav-link.active {
+  background: #856b7d;
+  color: #ffffff;
+}
+
+body.theme-professional .nav-link:hover {
+  background: #e1d1d7;
+}
+
+/* admin dashboard: neutral grey + deep blue */
+body.theme-admin {
+  background: radial-gradient(circle at top, #f2f4f8, #e5f0ff);
+}
+
+body.theme-admin .logo {
+  color: #3e3e43;
+}
+
+body.theme-admin .nav-link.active {
+  background: #4f5980;
+  color: #ffffff;
+}
+
+body.theme-admin .nav-link:hover {
+  background: #c9d6ff;
+}
+
+/* give admin cards a small accent line so they don't look flat */
+body.theme-admin .card {
+  border-top: 4px solid #4f5980;
+}
+
+/* make analytics charts use lavender accent instead of blue */
+body.theme-analytics .chart-card {
+  border-top-color: var(--lavender-main);
+}
+
